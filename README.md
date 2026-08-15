@@ -7,7 +7,7 @@
   </p>
 
   <p>
-    <a href="#license"><img src="https://img.shields.io/badge/license-GPLv3-blue?style=flat-square" alt="License"></a>
+    <a href="#license"><img src="https://img.shields.io/badge/license-AGPLv3-blue?style=flat-square" alt="License"></a>
     <a href="https://hex-rays.com/ida-pro/"><img src="https://img.shields.io/badge/IDA%20Pro-9%2B-green?style=flat-square" alt="IDA Version"></a>
     <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.x-yellow?style=flat-square" alt="Python 3"></a>
   </p>
