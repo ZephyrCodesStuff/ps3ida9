@@ -64,15 +64,17 @@ You can run `ps3ida9_standalone.py` directly without installing:
 > [!IMPORTANT]
 > Make sure that the `ps3ida9_standalone.py` script is located right next to the `ps3ida9` main folder. It's just a wrapper!
 
-### ⚡ Option 3: C++ SDK Plugin (`ida-sdk`)
+### ⚡ Option 3: C++ SDK Plugin (`cpp/` or `ida-sdk`)
 
 For maximum performance on massive 100+ MB retail binaries:
 ```bash
-cd ida-sdk/src
+cd ps3ida9/cpp
+# Point IDASDK to your ida-sdk directory if not located in a sibling path
+export IDASDK=/path/to/ida-sdk
 cmake -B build -G Ninja
-cmake --build build --target ps3ida9
+cmake --build build
 ```
-Outputs `ida-sdk/bin/plugins/ps3ida9.dll` (or `.so` / `.dylib`), which you can place in your IDA `plugins/` directory.
+Outputs `build/ps3ida9.dll` (or `.so` / `.dylib`), which you can place in your IDA `plugins/` directory.
 
 ## 🎛️ Action List & Hotkeys
 
@@ -95,7 +97,7 @@ On small to medium-sized homebrew or PRX modules, IDAPython runs in just a few s
 However, retail PS3 games often contain **100,000+ functions and millions of instructions**. Because IDAPython creates temporary Python wrapper objects for every decoded instruction across the SWIG boundary, full-binary RTOC register propagation in Python can take a couple of minutes. 
 
 > [!TIP]
-> If you are regularly reversing large commercial games, compile the native C++ plugin (`ida-sdk/src/plugins/ps3ida9`), which executes instruction decoding directly in CPU registers with zero allocation overhead (~20× to 100× faster).
+> If you are regularly reversing large commercial games, compile the native C++ plugin (`ps3ida9/cpp/`), which executes instruction decoding directly in CPU registers with zero allocation overhead (~20× to 100× faster).
 
 ## 📝 License
 
